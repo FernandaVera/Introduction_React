@@ -71,18 +71,15 @@ export default class app extends React.Component {
       user={this.state.user.userName}
       logout={this.logout}
       signin={this.signin}
-      />
-    if (this.state.user.userName) {
-        <Formulario 
-        username={this.state.user.userName} 
-        password={this.state.user.password} 
-        />
-    } else {
-      <PostsList
-      posts={this.state.posts}/>
+      />{
+    (this.state.user.userName? <Formulario 
+      username={this.state.user.userName} 
+      password={this.state.user.password} 
+      />:       <PostsList
+      posts={this.state.posts}/>)
     }
         <footer>By Weman Connect</footer>
       </div>
-  };
+  }
   }
   
